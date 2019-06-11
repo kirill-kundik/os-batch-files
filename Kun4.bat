@@ -15,11 +15,11 @@ IF EXIST %root% (
 
 :findMatch
 FOR %%n IN (%root%\*) DO (
-  ECHO Same files to the %%n: >> List.txt
+  ECHO Files that are the same as %%n: >> List.txt
   :: ECHO %%n
   FOR /r %root%\ %%i IN (*) DO (
     IF NOT %%n==%%i (
-      fc /b %%n %%i >NUL && ECHO File: %%~nxi  Path: %%~dpi  >> List.txt
+      fc /b %%n %%i >NUL && ECHO File: %%i >> List.txt
       )
       )
       :: ECHO No more equal files >> List.txt
