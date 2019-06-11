@@ -39,11 +39,10 @@ ECHO Your notifications for the upcoming events:
 
 :: loop through dates file
 FOR /f "tokens=1,2 delims=:" %%A IN (Dates.txt) DO (
-  IF "%%B"==" %tomorrow%"
-  (
+  IF "%%B"==" %tomorrow%" (
     ECHO Tomorrow you are going to this event: %%A
-    )
-    )
+  )
+)
 
 ECHO You don't have other events for tomorrow
 GOTO EOF
